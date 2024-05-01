@@ -12,4 +12,5 @@ urlpatterns = [
          path('contact/', views.contact, name = "contact"), 
          path('cart/', views.cart, name ='cart'),
          path('checkout/', views.checkout, name ='checkout'),
+         path('contact-form-submit/', views.contact_form_submit, name='contact_form_submit'),
 ]
