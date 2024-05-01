@@ -46,8 +46,8 @@ def contact_form_submit(request):
         # Send email
         send_mail(
             'New Contact Query',
-            f'Name: {first_name} {last_name}\n\nMessage: {message}',
-            email,  # Your email address
+            f'Name: {first_name} {last_name}\nEmail: {email}\nMessage: {message}',
+            'esquaretech2023@gmail.com',  # Your email address
             ['esquaretech2023@gmail.com'],  # Recipient's email address
             fail_silently=False,
         )
