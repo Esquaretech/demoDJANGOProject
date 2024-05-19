@@ -10,6 +10,7 @@ from django.template.loader import get_template
 from django.template import Context
 from django.http import HttpResponse
 from django.core.mail import send_mail
+from .models import Contact
 from myapp import *
 
 def index(request):
@@ -42,6 +43,10 @@ def contact_form_submit(request):
         last_name = request.POST.get('lname')
         email = request.POST.get('email')
         message = request.POST.get('message')
+
+        # Save contact form data to the database
+        contact = Contact(first_name=first_name, last_name=last_name, email=email, message=message)
+        contact.save()
 
         # Send email
         send_mail(
