@@ -40,7 +40,7 @@ def checkout(request):
 def login(request):
     return render(request, "login.html")
 
-def login_view(request):
+def login_submit(request):
     print("inside login view")
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -56,7 +56,8 @@ def login_view(request):
         else:
             # Return an 'invalid login' error message.
             return render(request, 'login.html', {'error': 'Invalid username or password'})
-       
+    else:
+        print("test")
     return render(request, 'login.html')
 
 def contact_details(request):
